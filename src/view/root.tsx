@@ -10,7 +10,10 @@ type KeyPressData = {
     totalCount: number;
 }
 
-const keyOrder = "tnseriaodhzyqucgwxmfvjplkb".split('')
+// Colemak DH
+// const keyOrder = "tnseriaodhzyqucgwxmfvjplkb".split('')
+// Qwerty
+const keyOrder = "fjdkslavnieowqhpcgzvmxtnyb".split('')
 
 const WordDisplay = () => {
     const [previousLetters, setPreviousLetters] = createStore<string[]>([]);
@@ -25,7 +28,7 @@ const WordDisplay = () => {
     
     const [strengthenChars, setStrengthenChars] = createSignal<string[]>([])
     
-    const [availableKeys, setAvailableKeys] = createSignal(['t', 'n']);
+    const [availableKeys, setAvailableKeys] = createSignal(keyOrder.slice(0, 2));
     
     const computedKeyStats = createMemo(() => {
         const keys = [];
